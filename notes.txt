@@ -1,0 +1,13 @@
+1. Модуль classnames:
+className={cn(styles.button, {
+				[styles.primary]: appearance == 'primary',
+				[styles.ghost]: appearance == 'ghost',
+			})}
+Применится сначала button, потом в зависимости от условия либо primary, либо ghost
+
+2. Передача API элементов:
+interface ButtonProps
+	extends DetailedHTMLProps<
+		ButtonHTMLAttributes<HTMLButtonElement>,
+		HTMLButtonElement
+	>
