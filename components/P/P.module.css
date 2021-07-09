@@ -1,17 +1,18 @@
 .p {
 	color: var(--black);
+}
 
+.sm {
+	font-size: 14px;
 	line-height: 1.7;
 }
 
-.small {
-	font-size: 14px;
-}
-
-.regular {
+.md {
 	font-size: 16px;
+	line-height: 1.5;
 }
 
-.big {
+.lg {
 	font-size: 18px;
+	line-height: 1.6;
 }
