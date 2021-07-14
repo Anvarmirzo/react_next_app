@@ -20,7 +20,6 @@ export const Rating = ({
 	}, [rating]);
 
 	const constructRating = (currentRating: number) => {
-		console.log(currentRating);
 		const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
 			return (
 				<span
