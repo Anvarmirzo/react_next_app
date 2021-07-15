@@ -12,6 +12,10 @@
 	line-height: 1.2;
 }
 
+.footer a {
+	color: var(--white);
+}
+
 .footer a:hover {
 	color: var(--gray-light);
 }

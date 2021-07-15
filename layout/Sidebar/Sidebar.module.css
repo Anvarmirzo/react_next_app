@@ -2,12 +2,12 @@
 	list-style: none;
 }
 
+.sidebar li::before {
+	display: none;
+}
+
 .sidebar {
 	display: grid;
 	align-content: start;
 	gap: 20px;
-}
-
-.logo {
-	margin-top: 34px;
 }
