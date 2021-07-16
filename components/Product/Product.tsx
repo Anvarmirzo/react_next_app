@@ -1,5 +1,6 @@
 import { ProductProps } from './Product.props';
 import styles from './Product.module.css';
+import cn from 'classnames';
 import { Card } from '../Card/Card';
 import { Rating } from './../Rating/Rating';
 import { Tag } from './../Tag/Tag';
@@ -77,7 +78,7 @@ export const Product = ({
 					</div>
 				)}
 			</div>
-			<Divider className={styles.hr} />
+			<Divider className={cn(styles.hr, styles.hr2)} />
 			<div className={styles.actions}>
 				<Button appearance='primary'>Узнать подробнее</Button>
 				<Button className={styles.review} appearance='ghost' arrow='right'>
