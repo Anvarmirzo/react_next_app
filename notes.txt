@@ -52,3 +52,15 @@ useDebugValue - позволяет в devtools отображать какие �
 .env.production - для prod окружения (npm start)
 .env.test.local - для окружения запуска тестов (.gitignore)
 .env.test - для окружения запуска тестов
+
+6. Использование useRouter:
+	const router = useRouter();
+
+	const goToSearch = () => {
+		router.push({
+			pathname: '/search',
+			query: {
+				q: search,
+			},
+		});
+	};

@@ -2,7 +2,7 @@ import React from 'react';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 import '../styles/globals.css';
 import Head from 'next/head';
-import 'reseter.css';
+import 'normalize.css';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	return (

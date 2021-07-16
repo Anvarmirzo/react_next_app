@@ -4,6 +4,8 @@ import { Button, Htag, P, Rating, Tag } from '../components';
 import { withLayout } from '../layout/Layout';
 import axios from 'axios';
 import { MenuItem } from '../interfaces/menu.interface';
+import { Input } from './../components/Input/Input';
+import { Textarea } from './../components/Textarea/Textarea';
 
 function Home({ menu }: HomeProps): JSX.Element {
 	const [rating, setRating] = useState<number>(4);
@@ -44,6 +46,8 @@ function Home({ menu }: HomeProps): JSX.Element {
 					<li key={m._id.secondCategory}>{m._id.secondCategory}</li>
 				))}
 			</ul>
+			<Input placeholder='Тест' />
+			<Textarea placeholder='Тест' />
 		</>
 	);
 }
