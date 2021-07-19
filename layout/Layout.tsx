@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import { LayoutProps } from './Layout.props';
 import styles from './Layout.module.css';
-import cn from 'classnames';
 import { Header } from './Header/Header';
 import { Sidebar } from './Sidebar/Sidebar';
 import { Footer } from './Footer/Footer';
 import { AppContextProvider, IAppContext } from '../context/app.context';
+import { Up } from '../components';
 const Layout = ({ children }: LayoutProps): JSX.Element => {
 	return (
 		<div className={styles.wrapper}>
@@ -13,6 +13,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
 			<Sidebar className={styles.sidebar} />
 			<main className={styles.body}>{children}</main>
 			<Footer className={styles.footer} />
+			<Up />
 		</div>
 	);
 };

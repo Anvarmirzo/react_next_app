@@ -2,7 +2,8 @@
 	position: relative;
 }
 
-.input {
+.input,
+.input input {
 	width: 100%;
 }
 

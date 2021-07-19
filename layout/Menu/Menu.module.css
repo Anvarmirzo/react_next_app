@@ -1,9 +1,9 @@
 .firstBlock {
-	padding-left: 0;
-}
+	display: grid;
 
-.firstBlock li {
-	margin-bottom: 20px;
+	padding-left: 0;
+	grid-template-columns: 1fr;
+	gap: 20px;
 }
 
 .firstLevel {
@@ -51,11 +51,7 @@
 }
 
 .secondLevelBlock {
-	display: none;
-}
-
-.secondLevelBlockOpened {
-	display: block;
+	overflow: hidden;
 }
 
 .thirdLevel {
@@ -76,8 +72,6 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	row-gap: 10px;
-
-	margin-bottom: 13px;
 }
 
 .thirdLevelActive,

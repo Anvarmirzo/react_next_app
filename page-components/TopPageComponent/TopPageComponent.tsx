@@ -9,6 +9,7 @@ import { Sort } from './../../components/Sort/Sort';
 import { SortEnum } from '../../components/Sort/Sort.props';
 import { sortReducer } from './sort.reducer';
 import { Product } from './../../components/Product/Product';
+import { useScrollY } from '../../hooks/useScrollY';
 export const TopPageComponent = ({
 	page,
 	products,
@@ -25,6 +26,8 @@ export const TopPageComponent = ({
 	const setSort = (sort: SortEnum) => {
 		dispatchSort({ type: sort });
 	};
+
+	const y = useScrollY();
 
 	useEffect(() => {
 		dispatchSort({ type: 'reset', initialState: products });
@@ -43,7 +46,7 @@ export const TopPageComponent = ({
 			</div>
 			<div>
 				{sortedProducts &&
-					sortedProducts.map((p) => <Product key={p._id} product={p} />)}
+					sortedProducts.map((p) => <Product layout key={p._id} product={p} />)}
 			</div>
 			<div className={styles.hhTitle}>
 				<Htag tag='h2'>Вакансии - {page.category}</Htag>
