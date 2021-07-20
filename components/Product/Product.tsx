@@ -32,10 +32,12 @@ export const Product = motion(
 				visible: {
 					opacity: 1,
 					height: 'auto',
+					overflow: 'visible',
 				},
 				hidden: {
 					opacity: 0,
 					height: 0,
+					overflow: 'hidden',
 				},
 			};
 			return (
@@ -55,18 +57,26 @@ export const Product = motion(
 						</div>
 						<div className={styles.title}>{product.title}</div>
 						<div className={styles.price}>
-							{priceRU(product.price)}
+							<span>
+								<span className='sr-only'>Цена:</span>
+								{priceRU(product.price)}
+							</span>
 							{product.oldPrice && (
 								<Tag className={styles.oldPrice} color='green'>
+									<span className='sr-only'>Скидка:</span>
 									{priceRU(product.price - product.oldPrice)}
 								</Tag>
 							)}
 						</div>
 						<div className={styles.credit}>
+							<span className='sr-only'>Кредит:</span>
 							{priceRU(product.credit)}/
 							<span className={styles.month}>мес</span>
 						</div>
 						<div className={styles.rating}>
+							<span className='sr-only'>
+								Рейтинг:{product.reviewAvg ?? product.initialRating}
+							</span>
 							<Rating rating={product.reviewAvg ?? product.initialRating} />
 						</div>
 						<div className={styles.tags}>
@@ -76,8 +86,12 @@ export const Product = motion(
 								</Tag>
 							))}
 						</div>
-						<div className={styles.priceTitle}>цена</div>
-						<div className={styles.creditTitle}>кредит</div>
+						<div className={styles.priceTitle} aria-hidden='true'>
+							цена
+						</div>
+						<div className={styles.creditTitle} aria-hidden='true'>
+							кредит
+						</div>
 						<div className={styles.ratingTitle}>
 							<a href='#ref' onClick={scrollToReview}>
 								{product.reviewCount}
@@ -100,7 +114,6 @@ export const Product = motion(
 							))}
 						</div>
 						<div className={styles.advBlock}>
-							{' '}
 							{product.advantages && (
 								<div className={styles.advantages}>
 									<div className={styles.advTitle}>Преимущества</div>
@@ -122,6 +135,7 @@ export const Product = motion(
 								appearance='ghost'
 								arrow={isReviewOpened ? 'down' : 'right'}
 								onClick={() => setIsReviewOpened(!isReviewOpened)}
+								aria-expanded={isReviewOpened}
 							>
 								Читать отзывы
 							</Button>

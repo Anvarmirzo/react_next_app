@@ -23,16 +23,17 @@ a {
 	--black: #3b434e;
 	--gray-light: #ebebeb;
 	--gray: #a4a4a4;
-	--gray-dark: #787d85;
+	--gray-dark: #505359;
 	--white: white;
-	--primary: #7653fc;
+	--primary: #5b40c2;
 	--primary-hover: #6344df;
 	--red: #fc836d;
 	--red-light: #fea291;
-	--green: #1dc37e;
+	--green: #007b48;
 	--green-light: #c8f8e4;
 	--font-family: 'Noto Sans KR', sans-serif;
 }
+
 h1,
 h2,
 h3,
@@ -41,4 +42,17 @@ h5,
 h6,
 p {
 	margin: 0;
+}
+
+.d-none {
+	display: none;
+}
+
+.sr-only {
+	position: absolute;
+
+	overflow: hidden;
+
+	width: 0;
+	height: 0;
 }

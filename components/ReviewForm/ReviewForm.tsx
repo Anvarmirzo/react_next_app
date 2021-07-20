@@ -23,6 +23,7 @@ export const ReviewForm = ({
 		handleSubmit,
 		formState: { errors },
 		reset,
+		clearErrors,
 	} = useForm<IReviewForm>();
 
 	const [isSuccess, setIsSuccess] = useState<boolean>(false);
@@ -54,6 +55,7 @@ export const ReviewForm = ({
 					})}
 					placeholder='Имя'
 					error={errors.name}
+					aria-invalid={errors.name ? true : false}
 				/>
 				<Input
 					{...register('title', {
@@ -62,6 +64,7 @@ export const ReviewForm = ({
 					className={styles.title}
 					placeholder='Заголовок отзыва'
 					error={errors.title}
+					aria-invalid={errors.title ? true : false}
 				/>
 				<div className={styles.rating}>
 					<span>Оценка</span>
@@ -89,9 +92,18 @@ export const ReviewForm = ({
 					error={errors.description}
 					className={styles.description}
 					placeholder='Текст отзыва'
+					aria-label='Текст отзыва'
+					aria-invalid={errors.description ? true : false}
 				/>
 				<div className={styles.submit}>
-					<Button appearance='primary'>Отправить</Button>
+					<Button
+						appearance='primary'
+						onClick={() => {
+							clearErrors();
+						}}
+					>
+						Отправить
+					</Button>
 					<span className={styles.info}>
 						* Перед публикацией отзыв пройдет предварительную модерацию и
 						проверку
@@ -99,26 +111,32 @@ export const ReviewForm = ({
 				</div>
 			</div>
 			{isSuccess && (
-				<div className={cn(styles.panel, styles.success)}>
+				<div className={cn(styles.panel, styles.success)} role='alert'>
 					<div className={styles.successTitle}>Ваш отзыв отправлен</div>
 					<div>Спасибо, ваш отзыв будет опубликован после проверки.</div>
-					<CloseIcon
+					<button
 						className={styles.close}
 						onClick={() => {
 							setIsSuccess(false);
 						}}
-					/>
+						aria-label='Закрыть оповещение'
+					>
+						<CloseIcon />
+					</button>
 				</div>
 			)}
 			{error && (
-				<div className={cn(styles.panel, styles.error)}>
+				<div className={cn(styles.panel, styles.error)} role='alert'>
 					Что-то пошло не так, попробуйте перезагрузить страницу.
-					<CloseIcon
+					<button
 						className={styles.close}
 						onClick={() => {
 							setError(undefined);
 						}}
-					/>
+						aria-label='Закрыть оповещение'
+					>
+						<CloseIcon />
+					</button>
 				</div>
 			)}
 		</form>

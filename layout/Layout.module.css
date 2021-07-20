@@ -27,6 +27,25 @@
 	grid-area: footer;
 }
 
+.skipLink {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+
+	padding: 3px;
+
+	opacity: 0;
+	color: var(--white);
+	background-color: var(--primary);
+}
+
+.skipLink:focus {
+	z-index: 0;
+
+	opacity: 1;
+}
+
 @media (max-width: 768px) {
 	.wrapper {
 		grid-template-columns: minmax(320px, 1fr);

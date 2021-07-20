@@ -10,6 +10,8 @@ import { SortEnum } from '../../components/Sort/Sort.props';
 import { sortReducer } from './sort.reducer';
 import { Product } from './../../components/Product/Product';
 import { useScrollY } from '../../hooks/useScrollY';
+import { useReducedMotion } from 'framer-motion';
+
 export const TopPageComponent = ({
 	page,
 	products,
@@ -22,7 +24,7 @@ export const TopPageComponent = ({
 			sort: SortEnum.Rating,
 		},
 	);
-
+	const shouldReduceMotion = useReducedMotion();
 	const setSort = (sort: SortEnum) => {
 		dispatchSort({ type: sort });
 	};
@@ -38,16 +40,24 @@ export const TopPageComponent = ({
 			<div className={styles.title}>
 				<Htag tag='h1'>{page.title}</Htag>
 				{products && (
-					<Tag color='gray' size='md'>
+					<Tag
+						color='gray'
+						size='md'
+						aria-label={products.length + ' элементов'}
+					>
 						{products.length}
 					</Tag>
 				)}
 				<Sort sort={sort} setSort={setSort} />
 			</div>
-			<div>
+			<ul className={styles.productList}>
 				{sortedProducts &&
-					sortedProducts.map((p) => <Product layout key={p._id} product={p} />)}
-			</div>
+					sortedProducts.map((p) => (
+						<li key={p._id}>
+							<Product layout={shouldReduceMotion ? false : true} product={p} />
+						</li>
+					))}
+			</ul>
 			<div className={styles.hhTitle}>
 				<Htag tag='h2'>Вакансии - {page.category}</Htag>
 				<Tag color='red' size='md'>
