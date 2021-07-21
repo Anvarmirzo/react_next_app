@@ -20,11 +20,11 @@
 	gap: 20px 0;
 }
 
-.salary>div {
+.salary > div {
 	border-right: 1px solid var(--gray-light);
 }
 
-.salary>div:last-child {
+.salary > div:last-child {
 	border-right: none;
 }
 
@@ -37,10 +37,11 @@
 }
 
 .countValue {
+	color: var(--primary);
+
 	font-size: 36px;
 	font-weight: 700;
 	line-height: 1.3;
-	color: var(--primary);
 }
 
 .salaryValue {
@@ -74,15 +75,16 @@
 		grid-template-columns: 1fr;
 	}
 
-	.salary>div {
+	.salary > div {
 		padding-bottom: 20px;
 
 		border-right: none;
 		border-bottom: 1px solid var(--gray-light);
 	}
 
-	.salary>div:last-child {
+	.salary > div:last-child {
 		padding-bottom: 0;
+
 		border-bottom: none;
 	}
 }

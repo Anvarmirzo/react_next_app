@@ -20,7 +20,7 @@
 	color: var(--gray-light);
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
 	.footer {
 		grid-template-columns: 1fr;
 	}
