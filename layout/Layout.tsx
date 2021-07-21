@@ -9,7 +9,7 @@ import { Up } from '../components';
 const Layout = ({ children }: LayoutProps): JSX.Element => {
 	return (
 		<div className={styles.wrapper}>
-			<a className={styles.skipLink} tabIndex={1} href='#main'>
+			<a className={styles.skipLink} href='#main'>
 				Перейти к содержанию
 			</a>
 			<Header className={styles.header} />
