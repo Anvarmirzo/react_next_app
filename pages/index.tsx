@@ -13,41 +13,68 @@ function Home({ menu }: HomeProps): JSX.Element {
 
 	return (
 		<>
-			<Htag tag='h1'>Hello</Htag>
-			<Button appearance='primary' arrow='right'>
-				Кнопка
+			<Htag tag='h1'>Все компоненты:</Htag>
+			<Htag className='mx-4' tag='h2'>
+				Заголовки:
+			</Htag>
+			<Htag className='mx-4' tag='h1'>
+				H1
+			</Htag>
+			<Htag className='mx-4' tag='h2'>
+				H2
+			</Htag>
+			<Htag className='mx-4' tag='h3'>
+				H3
+			</Htag>
+
+			<Htag className='mx-4' tag='h2'>
+				Кнопки:
+			</Htag>
+			<Button className='me-2' appearance='primary' arrow='right'>
+				Primary
 			</Button>
 			<Button appearance='ghost' arrow='down'>
-				Кнопка
+				Ghost
 			</Button>
-			<P size='sm'>Hello</P>
-			<P size='md'>Hello</P>
-			<P size='lg'>Hello</P>
+
+			<Htag className='mx-4' tag='h2'>
+				Тексты разного размера:
+			</Htag>
+			<P size='sm'>SM</P>
+			<P size='md'>MD</P>
+			<P size='lg'>LG</P>
+
+			<Htag className='mx-4' tag='h2'>
+				Тэги:
+			</Htag>
 			<Tag size='sm' href='/'>
-				That's small link
+				sm link
 			</Tag>
 			<Tag size='md' color='red'>
-				That's big text
+				md red text
 			</Tag>
 			<Tag size='md' color='green'>
-				That's big text
+				md green text
 			</Tag>
 			<Tag size='md' color='ghost'>
-				That's big text
+				md ghost text
 			</Tag>
 			<Tag size='md' color='gray'>
-				That's big text
+				md gray text
 			</Tag>
 			<Tag size='md' color='primary'>
-				That's big text
+				md primary text
 			</Tag>
+
+			<Htag className='mx-4' tag='h2'>
+				Динамичный рейтинг:
+			</Htag>
 			<Rating rating={rating} isEditable setRating={setRating} />
-			<ul>
-				{menu.map((m) => (
-					<li key={m._id.secondCategory}>{m._id.secondCategory}</li>
-				))}
-			</ul>
-			<Input placeholder='Тест' />
+
+			<Htag className='mx-4' tag='h2'>
+				Текстовые поля:
+			</Htag>
+			<Input className='mx-4' placeholder='Тест' />
 			<Textarea placeholder='Тест' />
 		</>
 	);

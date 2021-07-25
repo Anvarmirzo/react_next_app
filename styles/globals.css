@@ -4,7 +4,7 @@ body {
 	padding: 0;
 
 	color: var(--black);
-	background: #F5F6F8;
+	background: #f5f6f8;
 
 	font-family: 'Noto Sans KR', sans-serif;
 }
@@ -20,17 +20,17 @@ a {
 }
 
 :root {
-	--black: #3B434E;
-	--gray-light: #EBEBEB;
-	--gray: #A4A4A4;
+	--black: #3b434e;
+	--gray-light: #ebebeb;
+	--gray: #a4a4a4;
 	--gray-dark: #505359;
 	--white: white;
-	--primary: #5B40C2;
-	--primary-hover: #6344DF;
-	--red: #FC836D;
-	--red-light: #FEA291;
-	--green: #007B48;
-	--green-light: #C8F8E4;
+	--primary: #5b40c2;
+	--primary-hover: #6344df;
+	--red: #fc836d;
+	--red-light: #fea291;
+	--green: #007b48;
+	--green-light: #c8f8e4;
 	--font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -55,4 +55,13 @@ p {
 
 	width: 0;
 	height: 0;
+}
+
+.mx-4 {
+	margin-top: 20px !important;
+	margin-bottom: 20px !important;
+}
+
+.me-2 {
+	margin-right: 10px;
 }
